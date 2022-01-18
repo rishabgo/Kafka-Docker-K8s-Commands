@@ -1,0 +1,39 @@
+starting zookeeper -> zookeeper-server-start.bat config\zookeeper.properties
+starting kafka broker -> kafka-server-start.bat config\server.properties
+
+kafka console producer -> kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic
+kafka console consumer -> kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic
+
+Creating a topic in kafka
+kafka-topics.bat --create --partitions 1 --replication-factor 1 --topic library-topic --zookeeper localhost:2181
+
+listing all topic
+kafka-topics.bat --list --zookeeper localhost:2181
+
+
+docker commands
+docker images --to view all docker images
+docker container ls --to view containers
+docker container stop {container id} -- to stop running container
+docker build -t {imagename:version} . --building docker image
+docker exec -it {contaienr name} -bash -- to open a shell on a container
+
+Kubernetes commands
+
+kubectl get node --to get node information
+kubeclt cluster-information
+kubectl create deployment {deploymentname} --image={image:version} --port={port number}
+kubectl expose deployment {deploymentname} --type={NodePort,LoadBalancer}
+kubeclt get service -- to view all exposed services
+kubectl get deployment
+kubectl get pods -- to view running pods
+kubeclt logs {pod name} --to view logs for specific pod
+
+minukube start
+minikube stop
+eval $(minikube docker-env) 
+
+
+
+ 
+ 
